@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EnumDemo
+{
+    class Program
+    {
+        enum Weather {
+        Rain, Snow, Sleet, Sun
+        }
+        static void Main(string[] args)
+        {
+            Weather today = Weather.Snow;
+            Weather tomorrow = Weather.Sun;
+
+            if(today == Weather.Rain)
+            {
+
+            }
+        }
+        
+        }
+    }
+}
