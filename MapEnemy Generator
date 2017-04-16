@@ -1,0 +1,77 @@
+public int[] Generate(string enemy)
+        {
+            int[] stats = new int[5];
+
+            switch(enemy)
+            {
+                case "Rat":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Bat":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Snake":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Imp":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Goblin":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Undead":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Manticore":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Centaur":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Cyclops":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Ogre":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "Giant":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                case "LesserDragon":
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+                default:
+                    stats = new int[] { 0, 0, 0, 0 };
+                    break;
+            }
+            return stats;
+        }
+
+        public String Chose(int floor)
+        {
+            Random rng = new Random();
+            int x = rng.Next(0, 10*floor);
+            if(x < 5)
+            {
+                return "Rat";
+            }
+            else if(x < 9)
+            {
+                return "Bat";
+            }
+            else if(x < 13)
+            {
+                return "Snake";
+            }
+            else
+            {
+                return "Imp";
+            }
+        }
+        
+        
+        
+        
+                        string type = enemy.Chose(floor);
+                        int[] stats = enemy.Generate(type);
+                        obj.GenerateEnemy(type, stats[0], stats[1], stats[2], stats[3]);
