@@ -1,0 +1,26 @@
+if (points != 0)
+                {
+                    if (mouse.LeftButton == ButtonState.Pressed)
+                    {
+                        if (recHealth.Contains(mouse.Position) && player.MaxHealth < 100)
+                        {
+                            player.MaxHealth += 1;
+                            points--;
+                        }
+                        if (recAtk.Contains(mouse.Position) && player.Attack < 100)
+                        {
+                            player.Attack += 1;
+                            points--;
+                        }
+                        if (recDef.Contains(mouse.Position) && player.Defense < 100)
+                        {
+                            player.Defense += 1;
+                            points--;
+                        }
+                    }
+                }
+                else
+                {
+                    player.Health = player.MaxHealth;
+                    stateMachine.state = FSM.gameState.game;
+                }
