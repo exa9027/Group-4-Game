@@ -1,0 +1,102 @@
+public int[] Generate(string enemy)
+        {
+            int[] stats = new int[5];
+
+            switch (enemy)
+            {
+                case "Rat":
+                    stats = new int[] { 10, 10, 10, 1 };
+                    break;
+                case "Bat":
+                    stats = new int[] { 15, 12, 13, 2 };
+                    break;
+                case "Snake":
+                    stats = new int[] { 16, 19, 15, 3 };
+                    break;
+                case "Imp":
+                    stats = new int[] { 19, 24, 17, 4 };
+                    break;
+                case "Goblin":
+                    stats = new int[] { 24, 23, 23, 5 };
+                    break;
+                case "Undead":
+                    stats = new int[] { 32, 20, 28, 6 };
+                    break;
+                case "Manticore":
+                    stats = new int[] { 30, 29, 32, 7 };
+                    break;
+                case "Centaur":
+                    stats = new int[] { 32, 31, 37, 8 };
+                    break;
+                case "Cyclops":
+                    stats = new int[] { 36, 34, 40, 9 };
+                    break;
+                case "Ogre":
+                    stats = new int[] { 45, 32, 43, 10 };
+                    break;
+                case "Giant":
+                    stats = new int[] { 40, 45, 45, 11 };
+                    break;
+                case "Lesser Dragon":
+                    stats = new int[] { 46, 47, 47, 12 };
+                    break;
+                default:
+                    stats = new int[] { 30, 30, 30, 5 };
+                    break;
+            }
+            return stats;
+        }
+
+        public String Chose(int floor)
+        {
+            Random rng = new Random();
+            int x = rng.Next(0, (int)Math.Pow(10,floor));
+            if (x < 6)
+            {
+                return "Rat";
+            }
+            else if (x < 9)
+            {
+                return "Bat";
+            }
+            else if (x < 60)
+            {
+                return "Snake";
+            }
+            else if (x  < 90)
+            {
+                return "Imp";
+            }
+            else if (x < 600)
+            {
+                return "Goblin";
+            }
+            else if (x < 700)
+            {
+                return "Undead";
+            }
+            else if (x < 900)
+            {
+                return "Manticore";
+            }
+            else if (x < 4200)
+            {
+                return "Centaur";
+            }
+            else if (x < 7090)
+            {
+                return "Cyclops";
+            }
+            else if (x < 32000)
+            {
+                return "Ogre";
+            }
+            else if (x < 80000)
+            {
+                return "Giant";
+            }
+            else
+            {
+                return "Lesser Dragon";
+            }
+        }
