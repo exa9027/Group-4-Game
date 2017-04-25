@@ -1,0 +1,118 @@
+Changes to the MapEnemy class:
+
+public int[] Generate(string enemy)
+        {
+            //create array to hold the stats for each enemy
+            int[] stats = new int[5];
+
+            //depending on the name of the enemy, return a different array to hold the stats of the enemy
+            switch (enemy)
+            {
+                case "Rat":
+                    stats = new int[] { 10, 10, 10, 1 };
+                    break;
+                case "Bat":
+                    stats = new int[] { 15, 12, 13, 2 };
+                    break;
+                case "Snake":
+                    stats = new int[] { 15, 19, 11, 2 };
+                    break;
+                case "Imp":
+                    stats = new int[] { 18, 22, 15, 3 };
+                    break;
+                case "Goblin":
+                    stats = new int[] { 20, 20, 20, 3 };
+                    break;
+                case "Undead":
+                    stats = new int[] { 25, 17, 23, 3 };
+                    break;
+                case "Manticore":
+                    stats = new int[] { 23, 27, 25, 4 };
+                    break;
+                case "Centaur":
+                    stats = new int[] { 26, 28, 26, 4 };
+                    break;
+                case "Cyclops":
+                    stats = new int[] { 30, 30, 30, 5 };
+                    break;
+                case "Ogre":
+                    stats = new int[] { 35, 28, 32, 5 };
+                    break;
+                case "Giant":
+                    stats = new int[] { 30, 45, 30, 6 };
+                    break;
+                case "Lesser Dragon":
+                    stats = new int[] { 37, 37, 36, 6 };
+                    break;
+                default:
+                    stats = new int[] { 30, 30, 30, 5 };
+                    break;
+            }
+            //returns the array with the stats of the enemy
+            return stats;
+        }
+
+        //method to chose what name will be given to the enemy, which takes in an int for what floor the enemy is in
+        public String Chose(int floor)
+        {
+            //create random object
+            Random rng = new Random();
+
+            //sets up a control int x to equal a number between 0 and 10^floor
+            int x = rng.Next(0, (int)Math.Pow(10, floor));
+
+            //depending on the value of x, return a different enemy name
+            if (x < 4)
+            {
+                return "Rat";
+            }
+            else if (x < 7)
+            {
+                return "Bat";
+            }
+            else if (x < 20)
+            {
+                return "Snake";
+            }
+            else if (x < 55)
+            {
+                return "Imp";
+            }
+            else if (x < 250)
+            {
+                return "Goblin";
+            }
+            else if (x < 420)
+            {
+                return "Undead";
+            }
+            else if (x < 800)
+            {
+                return "Manticore";
+            }
+            else if (x < 2200)
+            {
+                return "Centaur";
+            }
+            else if (x < 6000)
+            {
+                return "Cyclops";
+            }
+            else if (x < 12000)
+            {
+                return "Ogre";
+            }
+            else if (x < 70000)
+            {
+                return "Giant";
+            }
+            else
+            {
+                return "Lesser Dragon";
+            }
+        }
+        
+The LevelUp methd in the Player class now checks if you are not above level 10 to level up
+
+The Game1 class now gives you 14 points everytime you levelup
+The boss's stats are 50 50 50 8
